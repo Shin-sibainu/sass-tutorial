@@ -1,0 +1,103 @@
+// $mainColor: #f0bde3;
+// $leftTextColor: #f0efef;
+// $rightTextColor: #3d3a3a;
+// $leftContentColor: #d19a5f;
+// $rightContentColor: #9ac376;
+
+// @mixin flexCenter {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+@import "./variables";
+@import "./functions";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+main {
+  @include flexCenter();
+  width: 100%;
+  height: 100%;
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  background-color: $mainColor;
+}
+
+.content {
+  display: flex;
+  //justify-content: space-evenly;
+  //align-items: center;
+
+  .leftContent {
+    // border: 1px solid black;
+    width: 650px;
+    height: 470px;
+    position: relative;
+    background-color: $leftContentColor;
+    border-radius: 10px;
+    margin-right: 20px;
+
+    h2 {
+      color: $leftTextColor;
+      position: absolute;
+      top: 40px;
+      right: 30px;
+      font-size: 50px;
+      cursor: pointer;
+      transition: all 0.3s;
+      &:hover {
+        font-size: 65px;
+        color: $mainColor;
+      }
+    }
+  }
+
+  .rightContent {
+    width: 300px;
+    //border: 1px solid black;
+    position: relative;
+
+    p {
+      //border: 1px solid black;
+      position: absolute;
+      top: 120px;
+      height: 400px;
+      border-radius: 10px;
+      background-color: $rightContentColor;
+      padding: 15px;
+      color: $rightTextColor;
+    }
+
+    button {
+      position: absolute;
+      top: 300px;
+      left: 30px;
+      padding: 13px;
+      border: none;
+      border-radius: 3px;
+      background-color: #3b3737;
+      color: $leftTextColor;
+      cursor: pointer;
+      transition: 0.2s;
+      &:hover {
+        font-size: 20px;
+        color: $mainColor;
+      }
+    }
+  }
+}
+
+// .content .leftContent {
+//   border: 1px solid black;
+// }
